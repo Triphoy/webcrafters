@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="icon" type="image/png" href="favicon.png">
+        <title>Разработка и создание сайтов и указание it услуг - Web Crafters</title>
+       <script src="wow.min.js"></script>
+    </head>
+<body>
+
+    
+    <header>
+        <div class="site-header-container">
+            <!-- Логотип -->
+           <div class="site-header-logo wow animate__animated animate__fadeInLeftBig">
+            <a href="index.html"><span class="site-header-logo-text ">WebCrafters</span></a>
+                <a href="index.html"><span class="site-header-logo-subtext">IT company</span></a>
+            </div>
+    
+            <!-- Навигация -->
+            <nav class="site-header-nav" id="nav-menu">
+                <a href="index3.html" class="site-header-nav-link site-header-logo wow animate__animated animate__fadeInLeftBig">Услуги</a>
+                <a href="portfolio.html" class="site-header-nav-link site-header-logo wow animate__animated animate__fadeInLeftBig">Портфолио</a>
+                <a href="makerevievs.html" class="site-header-nav-link site-header-logo wow animate__animated animate__fadeInLeft">Отзывы</a>
+                <a href="index4.html" class="site-header-nav-link wow animate__animated animate__fadeInRight">О компании</a>
+                <a href="blog.html" class="site-header-nav-link wow animate__animated animate__fadeInRightBig">Блог</a>
+                <a href="contact.html" class="site-header-nav-link site-header-highlight wow animate__animated animate__fadeInRightBig">Контакты</a>
+            </nav>
+    
+            <!-- Контактная информация -->
+            <div class="site-header-contact wow animate__animated animate__fadeInRightBig">
+                <a href="tel:+73812519547" class="site-header-phone">
+                    <i class="fas fa-phone-alt"></i> +7 (9083) <strong>13-62-69</strong>
+                </a>
+                <i class="fa fa-user-circle site-header-icon-search"></i>
+            </div>
+    
+            <!-- Кнопка для бургер-меню -->
+            <div class="site-header-burger" id="burger-menu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </div>
+        </div>
+    </header>
+  
+
+<div class="page-phone">
+    <div class="floating-ball"></div>
+    <div class="floating-ball"></div>
+    <div class="floating-ball"></div>
+
+    <section class="main-section">
+        <h1>Приветсвует Web Crafters <br> <span class="it">IT Company</span></h1>
+        <p>Напишем сайт для вашего бизнеса.</p>
+        <button onclick="location.href='#services'"><span>Услуги сервиса</span><i class="fas fa-arrow-right"></i></button>
+    </section>
+
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <div class="slider-item">
+                <img src="src/world34.png" alt="World" class="slider-image">
+            </div>
+            <div class="slider-item">
+                <img src="src/notes34.png" alt="Notes" class="slider-image">
+            </div>
+            <div class="slider-item">
+                <img src="src/statik34.png" alt="Statik" class="slider-image">
+            </div>
+        </div>
+        <div class="dots-container" id="dots-container">
+            <span class="dot active" onclick="moveToSlide(0)"></span>
+            <span class="dot" onclick="moveToSlide(1)"></span>
+            <span class="dot" onclick="moveToSlide(2)"></span>
+        </div>
+    </div>
+
+    <div class="marquee-container">
+        <div class="marquee">
+            <div class="marquee-item">
+                <span class="dot-gradient"></span> Написание сайтов
+            </div>
+            <div class="marquee-item">
+                <span class="dot-gradient"></span> Автоматизация сайтов
+            </div>
+            <div class="marquee-item">
+                <span class="dot-gradient"></span> Сайт на Тильда
+            </div>
+            <div class="marquee-item">
+                <span class="dot-gradient"></span> Разработка веб-приложений
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="chat-button" id="chatButton">
+    <i class="fas fa-comment-dots"></i> 
+  </div>
+
+ 
+  <div class="chat-modal" id="chatModal">
+    <div class="chat-header">Чат с менеджером</div>
+    <div class="chat-messages" id="chatMessages">
+     
+    </div>
+    <textarea class="chat-input" id="chatInput" placeholder="Напишите сообщение..." rows="3"></textarea>
+    <button class="send-button" id="sendButton">Отправить</button>
+
+   
+    <div class="suggestions" id="suggestions">
+      <div>Для помощи введите одно из следующих слов:</div>
+      <div class="suggestion-item" onclick="setInput('работа')">работа</div>
+      <div class="suggestion-item" onclick="setInput('цены')">цены</div>
+      <div class="suggestion-item" onclick="setInput('доставка')">доставка</div>
+      <div class="suggestion-item" onclick="setInput('контакт')">контакт</div>
+      <div class="suggestion-item" onclick="setInput('гарантии')">гарантии</div>
+    </div>
+  </div>
+
+
+
+<main>
+
+           
+
+    <section class="page2">
+        
+        <div class="line-container site-header-logo ">
+            <div class="vertical-line wow animate__animated animate__slideInUp"></div>
+            <div class="line-text-top wow animate__animated animate__fadeIn">WebCrafter</div>
+            <div class="line-text-bottom wow animate__animated animate__fadeIn">2024</div>
+        </div>
+        <div class="webcrafters-container">
+            <div class="webcrafters-content">
+                <div class="webcrafters-stats">
+                    <div class="webcrafters-stat-item">
+                        <p class="number wow animate__animated animate__fadeInUp">+200</p>
+                        <span class="text-line wow animate__animated animate__fadeInUp">Веб Проектов</span>
+                    </div>
+                    <div class="webcrafters-stat-item wow animate__animated animate__fadeInUp">
+                        <p>+50</p>
+                        <span>App проектов</span>
+                    </div>
+                </div>
+
+
+                
+                <div class="webcrafters-logo wow animate__animated animate__fadeInUp">
+                    <h1>&lt;WEB_CRAFTERS&gt;</h1>
+                    <p>- it компания, разработка сайтов, <br>приложений, веб-дизайн, написание<br> программ на  разных языках</p>
+                </div>
+
+                <div class="webcrafters-buttons wow animate__animated animate__fadeInUp">
+                    <a href="index3.html"><button class="webcrafters-signup-btn">Услуги</button></a>
+                    <span class="webcrafters-divider"></span>
+                   <a href="#custom-checklist"> <button class="webcrafters-login-btn">Расчитать</button></a>
+                </div>
+                <a href="#" class="scroll-down-link wow animate__animated animate__fadeInUp" >Прокрутить вниз <i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+
+        <div class="webcrafters-phone-image wow animate__animated animate__zoomInDown">
+            <img src="src/Group 39 (1).png" alt="Phone with Website">
+        </div>
+       
+    </section>
+</main>
+
+<section class="portfolio">
+    <h1 class="portfolio-title">Портфолио</h1>
+    <div class="projects">
+    
+      <div class="project-card large-card">
+        <h2>SmartCity Solutions</h2>
+        <p>Разработали платформу для умных городов, включая управление транспортом, энергией и городской инфраструктурой в реальном времени.</p>
+        <div class="tags">
+          <span>Разработка</span>
+          <span>Инновации</span>
+          <span>AI</span>
+        </div>
+        <div class="image-wrapper-city">
+          <img src="src/SmartCity Solutions.png" alt="SmartCity Solutions">
+        </div>
+      </div>
+      <div class="project-card small-card">
+        <h2>HealthTrack Pro</h2>
+        <p>Создали приложение для мониторинга здоровья с интеграцией с носимыми устройствами и искусственным интеллектом для диагностики.</p>
+        <div class="tags">
+          <span>Мобильные приложения</span>
+          <span>AI</span>
+        </div>
+        <div class="image-wrapper-pulse">
+          <img src="src/HealthTrack Pro.svg" alt="HealthTrack Pro">
+        </div>
+      </div>
+      <div class="project-card small-card">
+        <h2>EcoFleet Manager</h2>
+        <p>Разработали систему для управления экологическими показателями автопарков и оптимизации маршрутов с использованием Big Data.</p>
+        <div class="tags">
+          <span>Разработка</span>
+          <span>Экология</span>
+          
+        </div>
+        <div class="image-wrapper-pulse2">
+          <img src="src/EcoFleet Manager.svg" alt="EcoFleet Manager">
+        </div>
+      </div>
+
+    
+      <div class="project-card medium-card">
+        <h2>FinTech Revolution</h2>
+        <p>Разработали безопасную платформу для онлайн-банкинга с элементами блокчейн-технологий и смарт-контрактов для транзакций.</p>
+        <div class="image-wrapper-transport">
+          <img src="src/FinTech Revolution.svg" alt="FinTech Revolution">
+        </div>
+      </div>
+      <div class="project-card medium-card">
+        <h2>AI Chatbot Platform</h2>
+        <p>Создали мощную платформу для автоматизации общения с клиентами с использованием технологий обработки естественного языка.</p>
+        <div class="image-wrapper-delivery">
+          <img src="src/AI Chatbot Platform.svg" alt="AI Chatbot Platform">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="custom-checklist" class="custom-checklist-section">
+    <div class="custom-content-wrapper">
+        <div class="custom-text-content">
+            <h1 class="custom-title wow animate__animated animate__fadeInUp">Бесплатный чек-лист</h1>
+            <p class="custom-description wow animate__animated animate__fadeInUp">
+                Если вы хотите расчитать стоимость проекта - то мы вам поможем, это бесплатно, а занимает всего несколько минут
+            </p>
+            <form class="custom-form wow animate__animated animate__fadeInUp">
+                <div class="custom-prewiev">
+                <div class="custom-input-group">
+                    <label for="custom-phone">Ваш телефон</label>
+                    <input type="text" id="custom-phone" name="phone" placeholder="Введите номер">
+                </div>
+                <div class="custom-input-group">
+                    <label for="custom-email">Ваш email</label>
+                    <input type="email" id="custom-email" name="email" placeholder="Введите email">
+                </div>
+
+            </div>
+                <button type="submit" class="custom-download-btn" onclick="openCustomModal()">Получить чек-лист</button>
+
+<div id="customProjectModal" class="custom-modal">
+<div class="custom-modal-content">
+<span class="custom-close" onclick="closeCustomModal()">&times;</span>
+<h3 class="custom-modal-title">Рассчитайте стоимость проекта</h3>
+<form id="customProjectForm">
+    <div class="custom-form-group">
+        <label for="customProjectType">Тип проекта:</label>
+        <select id="customProjectType" name="projectType">
+            <option value="website">Сайт под ключ</option>
+            <option value="mobileApp">Мобильное приложение</option>
+            <option value="software">Программное обеспечение</option>
+            <option value="design">Веб-дизайн</option>
+            <option value="support">Техническая поддержка</option>
+        </select>
+    </div>
+    <div class="custom-form-group">
+        <label for="customPlatform">Платформа/Технология:</label>
+        <select id="customPlatform" name="platform">
+            <option value="web">Веб</option>
+            <option value="mobile">Мобильное приложение</option>
+            <option value="backend">Backend</option>
+            <option value="other">Другое</option>
+        </select>
+    </div>
+    <div class="custom-form-group">
+        <label>Функциональность:</label>
+        <div class="custom-checkbox-group">
+            <label><input type="checkbox" id="customLogin" name="functionality" value="login"> Личный кабинет</label>
+            <label><input type="checkbox" id="customPayments" name="functionality" value="payments"> Онлайн-оплаты</label>
+            <label><input type="checkbox" id="customChat" name="functionality" value="chat"> Чат</label>
+            <label><input type="checkbox" id="customMarketplace" name="functionality" value="marketplace"> Маркетплейс</label>
+        </div>
+    </div>
+    <div class="custom-form-group">
+        <label for="customBudget">Бюджет:</label>
+        <select id="customBudget" name="budget">
+            <option value="low"> < 100,000 руб.</option>
+            <option value="medium">100,000–300,000 руб.</option>
+            <option value="high">300,000–500,000 руб.</option>
+            <option value="veryHigh">> 500,000 руб.</option>
+        </select>
+    </div>
+    <div class="custom-form-group">
+        <label for="customName">Ваше имя:</label>
+        <input type="text" id="customName" name="name" placeholder="Введите ваше имя" required>
+    </div>
+    <div class="custom-form-group">
+        <label for="customEmail">Ваш Email:</label>
+        <input type="email" id="customEmail" name="email" placeholder="Введите ваш Email" required>
+    </div>
+    <button type="submit" class="custom-submit-btn">Отправить</button>
+</form>
+</div>
+</div>
+
+
+    
+
+
+            </form>
+            <p class="custom-privacy-note wow animate__animated animate__fadeInUp">
+                Нажимая на кнопку «Расчитать чек-лист», вы можете<br>
+             получать письма от нашей компании.
+            </p>
+        </div>
+        <div class="custom-image-content">
+            <div class="custom-image-wrapper">
+                <img src="src/pngwing.com (2).png" alt="Чек-лист" class="custom-checklist-image custom-left">
+                <img src="src/pngwing.com (2).png" alt="Чек-лист" class="custom-checklist-image custom-right">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page3">
+    <div class="skills-wrapper">
+        <div class="skills-section">
+            <div class="skill-card" data-skill="html">
+                <div class="skill-icon">
+                    <img src="src/html 1.png" alt="HTML" class="wow animate__animated animate__fadeIn">
+                </div>
+                <h3>HTML</h3>
+                <p>Структура веб-страниц</p>
+            </div>
+            <div class="skill-card" data-skill="figma">
+                <div class="skill-icon">
+                    <img src="src/figma 1.png" alt="Figma" class="wow animate__animated animate__fadeIn">
+                </div>
+                <h3>Figma</h3>
+                <p>Дизайн и прототипирование</p>
+            </div>
+            <div class="skill-card" data-skill="css">
+                <div class="skill-icon">
+                    <img src="src/css 1.png" alt="CSS" class="wow animate__animated animate__fadeIn">
+                </div>
+                <h3>CSS</h3>
+                <p>Стилизация интерфейсов</p>
+            </div>
+            <div class="skill-card" data-skill="javascript">
+                <div class="skill-icon">
+                    <img src="src/js-file 1.png" alt="JavaScript" class="wow animate__animated animate__fadeIn">
+                </div>
+                <h3>JavaScript</h3>
+                <p>Интерактивность на сайте</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="popup-close" id="popup-close">&times;</span>
+        <div class="popup-image">
+            <img src="" alt="" id="popup-img">
+        </div>
+        <h2 id="popup-title">Заголовок</h2>
+        <p id="popup-description">Описание навыка...</p>
+    </div>
+</div>
+
+<section class="page4">
+    <div class="projects-block">
+        <div class="text-container">
+            <h2 class="projects-title wow animate__animated animate__backInLeft">
+                Наша сплоченная <br> команда
+                <span class="arrow">→</span>
+            </h2>
+            <div class="title-background wow animate__animated animate__backInLeft"></div>
+            <p class="projects-subtitle wow animate__animated animate__backInLeft">Мы будем рады вам помочь</p>
+        </div>
+        <div class="video-container wow animate__animated animate__backInRight">
+            <iframe 
+                src="https://www.youtube.com/embed/your-video-id" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+
+<section class="page5">
+    <div class="custom-why-us-section">
+      <div class="animated-balls-container">
+        <div class="animated-ball ball1"></div>
+        <div class="animated-ball ball2"></div>
+        <div class="animated-ball ball3"></div>
+        <div class="animated-ball ball4"></div>
+        <div class="animated-ball ball5"></div>
+        
+      </div>
+      <div class="custom-why-us-content">
+        <h2 class="custom-why-us-title wow animate__animated animate__fadeInUp">Почему мы?</h2>
+        <p class="custom-why-us-description wow animate__animated animate__fadeInUp">
+          С нами ваш бизнес будет защищен и эффективен. <br> Мы используем современные технологии и лучшие практики, <br>
+          чтобы гарантировать надёжность и безопасность ваших IT-систем.
+        </p>
+        <button class="custom-check-reviews-btn wow animate__animated animate__fadeInUp">Смотреть отзывы</button>
+        <div class="custom-card-container">
+          <div class="custom-card wow animate__animated animate__fadeInLeft">
+            <i class="fas fa-user custom-card-icon"></i>
+            <p>100+ Отзывов</p>
+          </div>
+          <div class="custom-card wow animate__animated animate__fadeInLeftBig">
+            <i class="fas fa-trophy custom-card-icon"></i>
+            <p>Хороший Рейтинг</p>
+          </div>
+          <div class="custom-card wow animate__animated animate__fadeInLeftBig">
+            <i class="fas fa-shield-alt custom-card-icon"></i>
+            <p>Гарантия</p>
+          </div>
+        </div>
+        <div class="custom-logo-container">
+          <div class="custom-card wow animate__animated animate__fadeInRight">
+            <img src="src/LOGO1.jpg" alt="Logo 1" class="custom-logo">
+          </div>
+          <div class="custom-card wow animate__animated animate__fadeInRightBig">
+            <img src="src/LOGO2.jpg" alt="Logo 2" class="custom-logo">
+          </div>
+          <div class="custom-card wow animate__animated animate__fadeInRightBig">
+            <img src="src/LOGO3.jpg" alt="Logo 3" class="custom-logo">
+          </div>
+        </div>
+      </div>
+      <div class="custom-why-us-image wow animate__animated animate__zoomIn">
+        <img src="src/Rectangle (3).png" alt="Person with laptop">
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="page6">
+
+    <h2 class="separator wow animate__animated animate__fadeInLeft">
+        Наши приемущества
+    </h2>
+
+    <div class="sell-nft wow animate__animated animate__fadeInLeft">
+        <div class="item">
+            <div class="header">
+                <i class='bx bx-wallet-alt'></i>
+                <h5>Способы оплаты</h5>
+            </div>
+            <p>Мы предоставляем различные способы оплаты. Карта, наличные, usdt, другая валюта, крипто кошельки.</p>
+        </div>
+        <div class="item">
+            <div class="header">
+                <i class='bx bx-cart-alt'></i>
+                <h5>Онлайн чат</h5>
+            </div>
+            <p>Эксперты готовые вам помочь в вашей проблеме 24/7. Обсудите проект и распланируйте его.</p>
+        </div>
+        <div class="item">
+            <div class="header">
+                <i class='bx bx-grid-alt'></i>
+                <h5>Акции и подарки</h5>
+            </div>
+            <p>Работая с нами вы получаете шанс выиграть ежемесячный приз от нашей команды.</p>
+        </div>
+    </div>
+
+    <h2 class="separator wow animate__animated animate__fadeInRight">
+        Сейчас скидки
+    </h2>
+
+    <div class="nft-shop wow animate__animated animate__fadeInRight">
+        
+
+        <div class="nft-list">
+            <div class="item">
+                <img src="src/7 Web Design Trends for 2024 – Creatisimo.jpg">
+                <div class="info">
+                    <div>
+                        <h5>Сайт под ключ</h5>
+                        <div class="btc">
+                            <i class='bx bx-ruble'></i>
+                            <p>от 25.000</p>
+                        </div>
+                    </div>
+                    <p>5 из 33</p>
+                </div>
+                <div class="bid">
+                    <p class="timer" data-time="901">2h 28m 1s</p>
+                    <a href="index4.html">Купить сейчас</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="src/Deep Learning in Action_ Python Code for Neural Networks.jpg">
+                <div class="info">
+                    <div>
+                        <h5>Программа python</h5>
+                        <div class="btc">
+                            <i class='bx bx-ruble'></i>
+                            <p>от 10.000</p>
+                        </div>
+                    </div>
+                    <p>7 of 12</p>
+                </div>
+                <div class="bid">
+                    <p class="timer" data-time="5281">1h 28m 1s</p>
+                    <a href="#">Купить сейчас</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="src/NFT market place.jpg">
+                <div class="info">
+                    <div>
+                        <h5>Веб дизайн</h5>
+                        <div class="btc">
+                            <i class='bx bx-ruble'></i>
+                            <p>от 5.000</p>
+                        </div>
+                    </div>
+                    <p>9 of 23</p>
+                </div>
+                <div class="bid">
+                    <p class="timer" data-time="15661">4h 21m 1s</p>
+                    <a href="#">Купить сейчас</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="src/fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg">
+                <div class="info">
+                    <div>
+                        <h5>Написание игр</h5>
+                        <div class="btc">
+                            <i class='bx bx-ruble'></i>
+                            <p>от 45.000</p>
+                        </div>
+                    </div>
+                    <p>1 of 33</p>
+                </div>
+                <div class="bid">
+                    <p class="timer" data-time="1681">0h 28m 1s</p>
+                    <a href="#">Купить сейчас</a>
+                </div>
+            </div>
+        </div>
+        
+
+     <div class="view-more animate__animated animate__fadeInUpBig">
+     <button><a href="index3.html">Смотреть все</a></button> 
+    </div>
+
+</section>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h2>Web Crafters</h2>
+            <p>Инновационные решения для вашего бизнеса.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Быстрые ссылки</h3>
+            <ul>
+                <li><a href="#services">Наши услуги</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#blog">Блог</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h3>Подключитесь с нами</h3>
+            <div class="social-icons">
+                <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+        <div class="footer-contact">
+            <h3>Контактная информация</h3>
+            <p>Улица Web Crafters 123, Омск, Россия</p>
+            <p>Email: webcrafterswork@outlook.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Web Crafters. Все права защищены.</p>
+    </div>
+</footer>
+
+
+</div>
+
+<script>
+new WOW().init();
+</script> 
+
+</div>
+</body>
+
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,2913 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jaro:opsz@6..72&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+
+body {
+
+    overflow-x: hidden;
+   
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+/* Общие стили для хедера */
+header {
+    margin: 0 200px; /* Сохраняем отступы для больших экранов */
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Позволяем элементам переноситься при необходимости */
+}
+
+/* Контейнеры внутри хедера */
+.site-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Элементы переносятся на новую строку при нехватке места */
+    width: 100%; /* Устанавливаем ширину в 100% */
+}
+
+/* Логотип */
+.site-header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0; /* Запрещаем уменьшаться логотипу */
+}
+
+.site-header-logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(89, 0, 255); /* Зеленый цвет */
+}
+
+.site-header-logo-subtext {
+    font-size: 12px;
+    color: #888; /* Серый цвет подзаголовка */
+}
+
+
+
+
+
+.site-header-nav {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* Разрешаем элементы оборачиваться */
+    justify-content: center; /* Выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    margin: 0 auto; /* Центрируем сам контейнер, если необходимо */
+    flex-grow: 1; /* Контейнер растягивается, если есть дополнительное пространство */
+}
+
+
+.site-header-nav-link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.site-header-nav-link:hover {
+    color: rgb(89, 0, 255); /* Зеленый цвет */
+}
+
+.site-header-highlight {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Контактная информация */
+.site-header-contact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto; /* Сдвигаем контактную информацию вправо */
+}
+
+.site-header-phone {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.site-header-phone strong {
+    color: rgb(89, 0, 255); /* Зеленый цвет */
+}
+
+/* Иконки */
+.site-header-icon-search {
+    font-size: 16px;
+    color: rgb(89, 0, 255); /* Зеленый цвет */
+    cursor: pointer;
+}
+
+.fas {
+    font-size: 16px;
+    margin-right: 5px; /* Отступ для иконок */
+}
+
+
+
+
+.site-header-nav.open {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 10px;
+    z-index: 10000;
+}
+
+.site-header-nav a {
+    padding: 10px;
+    display: block;
+    z-index: 10000;
+}
+
+
+/* Стили для бургер-меню */
+.site-header-burger {
+    display: none; /* Скрыто по умолчанию */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+}
+
+/* Медиа-запрос для экранов до 1300px */
+@media (max-width: 1300px) {
+    .site-header-nav {
+        display: none; /* Скрываем стандартную навигацию */
+    }
+
+    .site-header-burger {
+        display: flex; /* Показываем бургер-меню */
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+}
+
+/* Медиа-запрос для экранов до 1200px */
+@media (max-width: 1200px) {
+    header {
+        margin: 0 50px; /* Уменьшаем отступы для компактных экранов */
+    }
+
+    .site-header-container {
+        gap: 20px; /* Уменьшаем промежутки между элементами */
+    }
+
+    .site-header-contact {
+        flex-wrap: wrap; /* Контактная информация переносится на новую строку, если не помещается */
+        justify-content: flex-end; /* Выравнивание справа */
+    }
+}
+
+/* Медиа-запрос для экранов до 480px */
+@media (max-width: 480px) {
+    header {
+        position: fixed;
+        top: 0px    ;
+        margin: 0; /* Убираем внешние отступы */
+        padding: 10px; /* Уменьшаем внутренние отступы */
+        width: 100%; /* Гарантируем ширину на весь экран */
+        background-color: #ffffff; /* Фон на весь экран */
+        box-sizing: border-box; /* Учитываем padding в ширину */
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+ 
+    .site-header-logo-text {
+        font-size: 20px; /* Уменьшаем размер текста логотипа */
+    }
+
+    .site-header-logo-subtext {
+        font-size: 10px; /* Уменьшаем размер подзаголовка */
+    }
+
+    .site-header-contact {
+        display: none; /* Прячем контактную информацию для компактности */
+    }
+
+    .site-header-burger {
+        display: flex; /* Показываем бургер-меню */
+    }
+
+    .site-header-nav {
+        display: none; /* Скрываем навигацию на мобильных устройствах */
+        flex-direction: column; /* Ссылки располагаются в колонку */
+    }
+
+    .site-header-nav.open {
+        display: flex; /* Показываем меню при клике на бургер */
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        width: 90%;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .site-header-nav-link {
+        text-align: left; /* Выравниваем текст ссылок по левому краю */
+    }
+}
+
+
+
+.page-phone {
+
+    display: none;
+}
+
+
+.main-section {
+
+margin-left: 20px;
+
+}
+
+
+.main-section h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.main-section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.main-section button {
+    background-color: #4B0082;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.main-section button:hover {
+    background-color: #3A0066;
+    transform: scale(1.05);
+}
+
+.main-section button i {
+    font-size: 1.2rem;
+}
+
+@keyframes floatBall {
+    0% {
+        transform: translate(-10%, -10%);
+    }
+    50% {
+        transform: translate(10%, 10%);
+    }
+    100% {
+        transform: translate(-10%, -10%);
+    }
+}
+
+.floating-ball {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(142, 68, 173, 0.2);
+    border-radius: 50%;
+    filter: blur(30px);
+    animation: floatBall 10s infinite;
+}
+
+.floating-ball:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    background: rgba(155, 89, 182, 0.15);
+    animation-duration: 12s;
+}
+
+.floating-ball:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    background: rgba(142, 68, 173, 0.25);
+    animation-duration: 8s;
+}
+
+.slider-container {
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-item {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.slider-image {
+    max-width: 120%;
+    max-height: 180px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    border-radius: 10px;
+}
+
+.slider-item:hover .slider-image {
+    transform: scale(1.05);
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #4B0082;
+}
+
+.marquee-container {
+    margin-top: 40px;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee {
+    display: flex;
+    animation: marquee 15s linear infinite;
+    white-space: nowrap; /* Убирает перенос текста */
+}
+
+.marquee-item {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    color: #4B0082;
+    font-size: 1.2rem;
+    font-weight: bold; /* Сделать текст жирным */
+}
+
+.dot-gradient {
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    background: linear-gradient(45deg, #9b59b6, #4B0082);
+    border-radius: 50%;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 680px) {
+
+     
+    .page-phone{
+
+        display: block;
+        margin-top: 150px;
+        margin-bottom: 250px;
+    }
+    
+
+    .slider-container {
+
+        margin-top: 50px;
+    }
+
+    
+}
+
+
+
+
+main {
+
+    display: flex;
+   max-width: 1500px;
+}
+
+.page2 {
+
+margin: 100px auto;
+position: relative;
+}
+
+
+
+.line-container {
+margin: 0 80px;
+position: relative;
+
+}
+
+.vertical-line {
+position: absolute;
+left: 0;
+top: 0;
+height: 600px;
+border-left: 5px solid rgb(117, 117, 117);
+margin-top: 50px;
+border-radius: 10em;
+}
+
+.line-text-top,
+.line-text-bottom {
+position: absolute;
+margin: 0 15px;
+transform: rotate(-90deg);
+transform-origin: left bottom;
+white-space: nowrap;
+font-family: "Jaro", sans-serif;
+font-size: 25px;
+color: rgb(117, 117, 117);
+}
+
+.line-text-top {
+bottom: 0px;
+transform:  rotate(-90deg);
+
+}
+
+.line-text-bottom {
+top: 720px;
+transform: rotate(-90deg); 
+}
+
+
+
+
+
+
+
+.webcrafters-container {
+flex: 1;
+display: flex;
+justify-content: flex-start; /* Сдвиг контента влево */
+align-items: flex-start; /* Выравнивание по верхнему краю */
+padding-left: 250px; /* Увеличен отступ слева */
+padding-top: 0px; /* Поднимаем контент выше */
+
+
+}
+
+.webcrafters-content {
+text-align: left; /* Контент немного левее */
+max-width: 500px; /* Максимальная ширина для ограничения контента */
+
+
+}
+
+
+
+.webcrafters-stats {
+display: flex;
+justify-content: space-around;
+margin-bottom: 50px;
+}
+
+.webcrafters-stat-item p {
+font-size: 40px;
+font-weight: bold;
+color: #555;
+}
+
+.webcrafters-stat-item span {
+font-size: 25px;
+color: #777;
+}
+
+.webcrafters-logo h1 {
+font-size: 80px;
+color: #6f5eff;
+transition: letter-spacing 0.5s ease; /* Плавное изменение letter-spacing */
+letter-spacing: normal; /* Исходное состояние */
+line-height: 1;
+}
+
+.webcrafters-logo h1:hover {
+letter-spacing: 5px; /* Увеличение расстояния между буквами при наведении */
+}
+
+.webcrafters-logo p {
+font-size: 35px;
+color: #999;
+margin-top: 15px;
+font-weight: 300;
+letter-spacing: 5px;
+white-space: nowrap;
+}
+
+
+
+.webcrafters-signup-btn {
+padding: 20px 100px;
+white-space: nowrap;
+font-weight: 800;
+font-size: 30px;
+border: 3px solid #333;
+background-color: transparent;
+cursor: pointer;
+transition: 0.3s;
+border-top-left-radius: 25px; /* Закругление верхнего левого угла */
+border-bottom-left-radius: 25px; /* Закругление нижнего левого угла */
+}
+
+.webcrafters-login-btn {
+font-weight: 800;
+white-space: nowrap;
+padding: 20px 120px;
+font-size: 30px;
+border: 3px solid #333;
+background-color: transparent;
+cursor: pointer;
+transition: 0.3s;
+border-top-right-radius: 25px; /* Закругление верхнего правого угла */
+border-bottom-right-radius: 25px; /* Закругление нижнего правого угла */
+}
+
+
+.webcrafters-buttons {
+margin-top: 150px;
+display: flex;
+justify-content: flex-start; /* Выровнять кнопки по левому краю */
+align-items: center;
+}
+
+.webcrafters-signup-btn:hover, .webcrafters-login-btn:hover {
+background-color: #333;
+color: #fff;
+}
+
+.webcrafters-divider {
+display: none; /* Убираем разделитель между кнопками */
+}
+
+
+
+
+
+
+
+.webcrafters-phone-image {
+position: absolute; /* Абсолютное позиционирование */
+right: -300px; /* Отрицательное значение для выхода за пределы экрана */
+top: 50%; /* Центрирование по вертикали */
+transform: translateY(-50%); /* Точное выравнивание по вертикали */
+z-index: 1; /* Чтобы элемент был выше других */
+}
+
+.webcrafters-phone-image img {
+max-width: 65%; /* Увеличение изображения, если нужно для эффекта */
+height: auto; /* Сохранение пропорций */
+flex-shrink: 0;
+}
+
+.webcrafters-phone-image img:hover {
+transition: transform 0.3s ease, 0.3s ease;
+transform: translateY(-10px); /* Подъем на 10 пикселей вверх при наведении */
+
+}
+
+
+.scroll-down-link {
+display: block; /* Отображение как блок для удобного размещения */
+margin-top: 80px; /* Отступ сверху */
+margin-left: 0px; /* Добавить небольшой отступ слева */
+font-size: 20px; /* Размер шрифта */
+color: #6d6d6d; /* Цвет текста */
+text-decoration: none; /* Убираем подчеркивание */
+text-align: left; /* Выровнять текст по левому краю */
+transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.scroll-down-link i {
+margin-left: 5px; /* Отступ между текстом и иконкой */
+transition: transform 0.3s ease; /* Плавный переход для иконки */
+}
+
+.scroll-down-link:hover {
+color: #333; /* Изменение цвета при наведении */
+}
+
+@media screen and (max-width: 1500px) {
+
+
+/* Поднимаем контейнер с контентом */
+.webcrafters-container {
+width: 90%; /* Уменьшаем ширину */
+max-width: 1200px; /* Устанавливаем максимальную ширину */
+margin: 0 auto; /* Центрируем */
+padding: 10px; /* Уменьшаем внутренний отступ */
+margin-left: 150px; /* Сдвиг на 50 пикселей вправо */
+margin-top: -80px; /* Поднимаем контейнер */
+}
+
+
+.line-container {
+
+display: none;
+}
+/* Поднимаем заголовок */
+.webcrafters-logo h1 {
+font-size: 50px; /* Уменьшаем размер текста */
+margin-top: -20px; /* Поднимаем заголовок */
+}
+
+/* Поднимаем параграф */
+.webcrafters-logo p {
+font-size: 25px; /* Уменьшаем текст */
+margin-top: 10px; /* Поднимаем параграф */
+}
+
+
+
+
+
+/* Поднимаем каждый элемент статистики */
+.webcrafters-stat-item {
+margin-top: 10px; /* Поднимаем элемент статистики */
+
+}
+
+
+
+/* Поднимаем нижний текст линии */
+.line-text-bottom {
+margin-top: -250px; /* Поднимаем текст еще выше */
+}
+
+
+/* Адаптируем текст статистики */
+.webcrafters-stat-item p {
+font-size: 20px; /* Адаптируем размер текста */
+
+}
+
+/* Уменьшаем описание статистики */
+.webcrafters-stat-item span {
+font-size: 20px; /* Уменьшаем описание */
+}
+
+/* Позиционируем изображение телефона */
+.webcrafters-phone-image {
+position: absolute; /* Абсолютное позиционирование */
+right: -150px; /* Уменьшаем отступ с правой стороны */
+top: 45%; /* Центрируем по вертикали, поднимаем */
+transform: translateY(-50%); /* Центрирование по вертикали */
+width: 40%; /* Устанавливаем ширину телефона */
+max-width: 900px; /* Ограничиваем максимальный размер */
+}
+
+/* Стили для изображения телефона при наведении */
+.webcrafters-phone-image img {
+width: 100%; /* Устанавливаем изображение на 100% ширины родительского контейнера */
+height: auto; /* Сохраняем пропорции изображения */
+}
+
+/* Эффект при наведении */
+.webcrafters-phone-image img:hover {
+transition: all 0.5s;
+transform: translateY(-10px); /* Подъем на 10 пикселей вверх при наведении */
+}
+
+/* Расстояние между кнопками */
+.webcrafters-buttons {
+gap: 20px; /* Увеличиваем расстояние между кнопками */
+}
+
+/* Стили для кнопок */
+.webcrafters-signup-btn, .webcrafters-login-btn {
+display: flex;
+justify-content: center;
+border-radius: 10px;
+margin-top: -60px; /* Поднимаем кнопки */
+height: 50px;
+width: 200px;
+font-size: 20px;
+align-items: center;
+}
+
+.scroll-down-link {
+font-size: 15px;
+margin-top: 10px;
+}
+}
+
+
+@media screen and (max-width: 768px) {
+
+/* Убираем возможные отступы у body */
+body {
+margin: 0;
+padding: 0;
+}
+
+/* Сильно уточняем центрирование .webcrafters-container */
+.webcrafters-container {
+display: flex;
+justify-content: center; /* Центрируем контейнер по горизонтали */
+align-items: center; /* Центрируем элементы по вертикали */
+flex-direction: column; /* Располагаем элементы вертикально */
+padding: 0 20px; /* Отступы слева и справа */
+width: 100%; /* Контейнер будет занимать всю ширину */
+max-width: 1200px; /* Ограничиваем максимальную ширину */
+margin: 0 auto; /* Центрируем контейнер */
+box-sizing: border-box; /* Включаем паддинги и бордеры в ширину */
+margin-top: -80px;
+}
+
+.webcrafters-content {
+width: 100%; /* Устанавливаем ширину на 100% */
+text-align: center; /* Центрируем текст */
+}
+
+.webcrafters-logo h1 {
+font-size: 50px; /* Уменьшить размер шрифта */
+}
+
+.webcrafters-logo p {
+font-size: 20px; /* Уменьшаем размер шрифта */
+margin-top: 10px; /* Уменьшаем отступ сверху */
+white-space: normal; /* Разрешаем перенос текста */
+text-align: center; /* Центрируем текст */
+padding: 0 10px; /* Добавляем отступы по бокам для улучшения читаемости */
+}
+
+.webcrafters-stats {
+display: flex; /* Выравниваем статистику в линию */
+justify-content: center; /* Центрируем элементы статистики */
+gap: 20px; /* Расстояние между элементами статистики */
+margin-bottom: 30px;
+width: 100%; /* Занимает всю ширину */
+box-sizing: border-box; /* Учитываем паддинги и бордеры в ширину */
+}
+
+.webcrafters-stat-item {
+display: flex;
+flex-direction: column; /* Вертикальное расположение внутри элемента */
+align-items: center;
+}
+
+.webcrafters-stat-item p {
+font-size: 30px; /* Уменьшить размер текста */
+}
+
+.webcrafters-stat-item span {
+font-size: 18px; /* Уменьшить размер текста */
+}
+
+.webcrafters-buttons {
+display: flex;
+justify-content: center; /* Кнопки в одну линию */
+gap: 20px; /* Расстояние между кнопками */
+margin-top: 100px; /* Уменьшить отступ сверху */
+}
+
+.webcrafters-signup-btn,
+.webcrafters-login-btn {
+width: auto; /* Кнопки не растягиваются */
+padding: 15px 20px; /* Сократить отступы */
+font-size: 20px; /* Уменьшить размер текста */
+}
+
+/* Убираем изображение телефона */
+.webcrafters-phone-image {
+display: none; /* Прячем изображение телефона */
+}
+
+.scroll-down-link {
+font-size: 15px; /* Уменьшить размер текста */
+margin-top: 20px; /* Уменьшить отступ сверху */
+text-align: center; /* Центрируем текст */
+}
+}
+
+@media screen and (max-width: 680px) {
+
+    .webcrafters-container {
+    
+    display: none;
+    }
+    }
+
+
+
+
+
+
+/* Стили для круглой кнопки чата */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  transform: translateY(-5px);
+  }
+
+  /* Эффект при наведении */
+  .chat-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Модальное окно чата */
+  .chat-modal {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 320px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 9998;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform 0.3s ease-out;
+    -webkit-transition: transform 0.3s ease-out;
+    -moz-transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+  }
+
+  /* Когда чат открыт */
+  .chat-modal.open {
+    transform: scale(1);
+  }
+
+  .chat-header {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #007bff;
+    color: #007bff;
+  }
+
+  .chat-messages {
+    height: 240px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .chat-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    resize: none;
+  }
+
+  .send-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+
+  .send-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Стили для сообщений */
+  .message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+  }
+
+  .message.user {
+    background-color: #007bff;
+    color: white;
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .message.manager {
+    background-color: #f1f1f1;
+    color: black;
+    text-align: left;
+    margin-right: auto;
+  }
+
+  /* Стили для подсказок */
+  .suggestions {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    border: 1px solid #ddd;
+    display: none; /* Скрыто по умолчанию */
+  }
+
+  .suggestion-item {
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .suggestion-item:hover {
+    color: #007bff;
+  }
+
+
+ 
+
+
+
+
+
+
+
+/* Main Portfolio Section */
+.portfolio {
+    padding: 40px 20px;
+    max-width: 1600px;
+    margin: 200px auto;
+  }
+  
+  .portfolio-title {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-left: 0; /* Align with the first card */
+    color: #7c27eb;
+  }
+  
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Grid with 4 flexible columns */
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Card Styles */
+  .project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .project-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-card h2 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .project-card p {
+    font-size: 0.85rem;
+    margin-bottom: 10px; /* Increased bottom margin for spacing */
+  }
+  
+  .tags {
+   margin-bottom: 10px;
+  }
+  
+  .tags span {
+    background-color: #eaeaff;
+    color: #6a5af9;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    display: inline-block;
+  }
+  
+  /* Adjustments for "Делай город" card */
+  .large-card {
+    grid-column: span 2;
+    grid-row: span 1;
+    padding: 15px;
+  }
+  
+  .large-card h2 {
+    margin-bottom: 5px;
+  }
+  
+  .large-card p {
+    margin-bottom: 5px;
+  }
+  
+  .large-card .tags {
+    margin-top: 10px; /* Added margin for spacing between content and tags */
+  }
+  
+  .large-card .image-wrapper-city {
+    height: 250px;
+  }
+  
+  .large-card .image-wrapper-city img {
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Different Sizes */
+  .medium-card {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .small-card {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  /* Image Styles */
+  .image-wrapper-city,
+  .image-wrapper-pulse,
+  .image-wrapper-pulse2,
+  .image-wrapper-transport,
+  .image-wrapper-delivery {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    max-height: 150px;
+    margin-bottom: 10px; /* Added margin to space the image from tags */
+  }
+  
+  .image-wrapper-city img,
+  .image-wrapper-pulse img,
+  .image-wrapper-pulse2 img,
+  .image-wrapper-transport img,
+  .image-wrapper-delivery img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .image-wrapper-city:hover img,
+  .image-wrapper-pulse:hover img,
+  .image-wrapper-pulse2:hover img,
+  .image-wrapper-transport:hover img,
+  .image-wrapper-delivery:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Circles Behind Image on Hover */
+  .image-wrapper-city::before, 
+  .image-wrapper-pulse::before, 
+  .image-wrapper-pulse2::before, 
+  .image-wrapper-transport::before, 
+  .image-wrapper-delivery::before,
+  .image-wrapper-city::after, 
+  .image-wrapper-pulse::after, 
+  .image-wrapper-pulse2::after, 
+  .image-wrapper-transport::after, 
+  .image-wrapper-delivery::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: #6a5af9;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .image-wrapper-city::before {
+    top: -20px;
+    left: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-pulse::before {
+    top: -20px;
+    left: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-pulse2::before {
+    top: -20px;
+    left: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-transport::before {
+    top: -20px;
+    left: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-delivery::before {
+    top: -20px;
+    left: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-city::after {
+    bottom: -20px;
+    right: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-pulse::after {
+    bottom: -20px;
+    right: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-pulse2::after {
+    bottom: -20px;
+    right: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-transport::after {
+    bottom: -20px;
+    right: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-delivery::after {
+    bottom: -20px;
+    right: -20px;
+    transform: scale(0.5);
+  }
+  
+  .image-wrapper-city:hover::before,
+  .image-wrapper-pulse:hover::before,
+  .image-wrapper-pulse2:hover::before,
+  .image-wrapper-transport:hover::before,
+  .image-wrapper-delivery:hover::before,
+  .image-wrapper-city:hover::after,
+  .image-wrapper-pulse:hover::after,
+  .image-wrapper-pulse2:hover::after,
+  .image-wrapper-transport:hover::after,
+  .image-wrapper-delivery:hover::after {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1200px) {
+    .projects {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .projects {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+  
+    .portfolio-title {
+      font-size: 1.8rem; /* Slightly smaller font on medium screens */
+    }
+  
+    .project-card {
+      padding: 10px; /* Reduced padding on medium screens */
+    }
+  
+    .project-card h2 {
+      font-size: 1rem;
+    }
+  
+    .project-card p {
+      font-size: 0.8rem;
+    }
+  
+    .tags {
+      margin-top: 15px; /* Increase spacing for tags */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .portfolio {
+
+
+        margin-top: -200px;
+        margin-bottom: 400px;
+    }
+    .projects {
+      grid-template-columns: 1fr; /* 1 column on mobile */
+      padding: 10px; /* Padding for mobile */
+    }
+  
+    .portfolio-title {
+      font-size: 1.6rem; /* Smaller title on mobile */
+    }
+  
+    .project-card {
+      padding: 15px 10px; /* Less padding for mobile */
+    }
+  
+    .project-card h2 {
+      font-size: 1.1rem;
+    }
+  
+    .project-card p {
+      font-size: 0.55rem; /* Slightly larger text for readability */
+    }
+  
+    .image-wrapper-city,
+    .image-wrapper-pulse,
+    .image-wrapper-pulse2,
+    .image-wrapper-transport,
+    .image-wrapper-delivery {
+      max-height: 200px; /* Bigger images on mobile */
+    }
+    
+    .image-wrapper-city img,
+    .image-wrapper-pulse img,
+    .image-wrapper-pulse2 img,
+    .image-wrapper-transport img,
+    .image-wrapper-delivery img {
+      object-fit: cover; /* Ensure image fills the space */
+    }
+  
+    .tags span {
+        font-size: 0.7rem;
+        margin-right: 8px; /* Add space between tags */
+        margin-bottom: 5px; /* Add some space below tags */
+        display: inline-block; /* Ensure tags behave as blocks for margins to work */
+      }
+    
+      .tags {
+        margin-top: 10px; /* Slightly increased spacing for better tag visibility */
+      }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-prewiev {
+    display: flex;
+    flex-wrap: nowrap; /* Поля ввода располагаются в одну строку */
+    gap: 20px; /* Пространство между полями ввода */
+}
+
+/* Секция */
+.custom-checklist-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 50px;  /* Уменьшены отступы */
+    margin-top: 200px !important;
+}
+
+/* Контейнер контента */
+.custom-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1500px;
+    width: 100%;
+}
+
+/* Текстовое содержимое */
+.custom-text-content {
+    max-width: 55%; /* Немного увеличен блок с текстом */
+}
+
+.custom-step-number {
+    color: #6f5eff;
+    font-size: 32px; /* Увеличенный размер шрифта */
+    margin: 0;
+}
+
+.custom-title {
+    font-size: 48px; /* Увеличенный размер шрифта */
+    color: #6f5eff;
+    margin: 10px 0;
+}
+
+.custom-description {
+    font-size: px; /* Увеличенный размер шрифта */
+    color: #6f5eff;
+    margin-bottom: 30px;
+}
+
+/* Форма */
+.custom-form {
+    display: flex;
+    flex-direction: column; /* Изменено для вертикального расположения */
+    gap: 20px; /* Расстояние между строками */
+}
+
+.custom-input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 45%;
+}
+
+.custom-input-group label {
+    font-size: 18px; /* Увеличенный размер шрифта */
+    color: #6f5eff;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.custom-input-group input {
+    padding: 16px 20px; /* Увеличены отступы в полях ввода */
+    font-size: 18px; /* Увеличенный размер шрифта */
+    border: 2px solid #d7c5f0; /* Светло-фиолетовый */
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-input-group input:focus {
+    border-color: #6f5eff;
+    box-shadow: 0 0 8px rgba(155, 89, 182, 0.4);
+}
+
+.custom-input-group input::placeholder {
+    color: #bbb;
+    font-size: 16px; /* Увеличен размер плейсхолдера */
+}
+
+/* Кнопка */
+.custom-download-btn {
+    background: linear-gradient(90deg, #6f5eff, rgb(121, 16, 167)); /* Градиент от фиолетового */
+    color: white;
+    border: none;
+    padding: 16px 30px; /* Увеличены отступы */
+    font-size: 20px; /* Увеличенный размер шрифта */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 250px; /* Увеличен максимальный размер кнопки */
+    align-self: center;
+}
+
+.custom-download-btn:hover {
+    background: linear-gradient(90deg,  rgb(121, 16, 167),#6f5eff); /* Плавный переход градиента */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.custom-privacy-note {
+    font-size: 16px; /* Увеличенный размер шрифта */
+    color: #6f5eff; /* Лавандовый фиолетовый */
+    margin-top: 30px; /* Немного больше отступ сверху */
+}
+
+/* Изображения */
+.custom-image-content {
+    max-width: 45%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-image-wrapper {
+    position: relative;
+    width: 240px; /* Увеличенный размер изображения */
+    height: 320px; /* Пропорциональное увеличение */
+}
+
+.custom-checklist-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.custom-checklist-image.custom-left {
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+.custom-checklist-image.custom-right {
+    transform: rotate(10deg);
+    z-index: 0;
+}
+
+/* Эффекты при наведении */
+.custom-image-wrapper:hover .custom-checklist-image.custom-left {
+    transform: rotate(-8deg) scale(1.05);
+}
+
+.custom-image-wrapper:hover .custom-checklist-image.custom-right {
+    transform: rotate(8deg) scale(1.05);
+}
+
+
+/* Секция */
+.custom-checklist-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 50px;
+    margin-top: 200px;
+}
+
+/* Контейнер контента */
+.custom-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1500px;
+    width: 100%;
+}
+
+/* Текстовое содержимое */
+.custom-text-content {
+    max-width: 55%;
+}
+
+.custom-step-number {
+    color: #6f5eff;
+    font-size: 32px;
+    margin: 0;
+}
+
+.custom-title {
+    font-size: 48px;
+    color: #6f5eff;
+    margin: 10px 0;
+}
+
+.custom-description {
+    font-size: 18px;
+    color: #6f5eff;
+    margin-bottom: 30px;
+}
+
+.custom-form {
+    display: flex;
+    flex-direction: column; /* Горизонтальное расположение полей ввода и кнопки */
+    gap: 20px;
+}
+
+.custom-input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 45%;
+}
+
+.custom-input-group label {
+    font-size: 18px;
+    color: #6f5eff;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.custom-input-group input {
+    padding: 16px 20px;
+    font-size: 18px;
+    border: 2px solid #d7c5f0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-input-group input:focus {
+    border-color: #6f5eff;
+    box-shadow: 0 0 8px rgba(155, 89, 182, 0.4);
+}
+
+.custom-input-group input::placeholder {
+    color: #bbb;
+    font-size: 16px;
+}
+
+.custom-download-btn {
+    background: linear-gradient(90deg, #6f5eff, rgb(121, 16, 167));
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 250px;
+    align-self: flex-start;
+}
+
+.custom-download-btn:hover {
+    background: linear-gradient(90deg, rgb(121, 16, 167), #6f5eff);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+
+
+/* Основное оформление модального окна */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Эффект размытия фона */
+}
+
+/* Контент модального окна */
+.custom-modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%; /* Делаем ширину адаптивной */
+    max-width: 500px; /* Ограничиваем максимальную ширину */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Заголовок окна */
+.custom-modal-title {
+    font-size: 22px; /* Немного уменьшаем размер */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #5a2dff;
+    text-align: center;
+}
+
+/* Закрывающая кнопка */
+.custom-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.custom-close:hover {
+    color: #000;
+}
+
+/* Форма */
+.custom-form-group {
+    margin-bottom: 15px;
+}
+
+.custom-form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.custom-form-group select,
+.custom-form-group input[type="text"],
+.custom-form-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.custom-checkbox-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.custom-submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5a2dff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-submit-btn:hover {
+    background-color: #7527db;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-prewiev {
+        flex-wrap: wrap; /* Поля ввода будут располагаться друг под другом на маленьких экранах */
+        gap: 10px; /* Уменьшите промежуток между полями */
+    }
+
+    .custom-input-group {
+        flex: 1 1 100%; /* Поля занимают 100% ширины */
+    }
+
+    .custom-input-group input {
+        width: 100%; /* Поля растягиваются на всю ширину */
+        box-sizing: border-box; /* Учитывайте отступы и бордеры */
+    }
+
+    .custom-download-btn {
+        max-width: 100%; /* Кнопка не будет превышать ширину экрана */
+        align-self: stretch; /* Растяните кнопку на всю доступную ширину */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-input-group input {
+        font-size: 14px; /* Уменьшите размер шрифта для маленьких экранов */
+        padding: 12px; /* Снизьте внутренние отступы */
+    }
+
+    .custom-prewiev {
+        gap: 5px; /* Еще меньшее расстояние между элементами */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-privacy-note {
+    font-size: 16px;
+    color: #6f5eff;
+    margin-top: 30px;
+}
+
+/* Изображения */
+.custom-image-content {
+    max-width: 45%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-image-wrapper {
+    position: relative;
+    width: 240px;
+    height: 320px;
+}
+
+.custom-checklist-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.custom-checklist-image.custom-left {
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+.custom-checklist-image.custom-right {
+    transform: rotate(10deg);
+    z-index: 0;
+}
+
+.custom-image-wrapper:hover .custom-checklist-image.custom-left {
+    transform: rotate(-8deg) scale(1.05);
+}
+
+.custom-image-wrapper:hover .custom-checklist-image.custom-right {
+    transform: rotate(8deg) scale(1.05);
+}
+
+/* Адаптивность */
+
+/* Для устройств от 1500px до 768px */
+@media (min-width: 768px) and (max-width: 1500px) {
+    .custom-content-wrapper {
+        flex-direction: column; /* Изменяем ориентацию на колонку */
+        align-items: center; /* Центрируем контент */
+    }
+
+    .custom-text-content {
+        max-width: 80%; /* Увеличиваем ширину текстового блока */
+        text-align: center; /* Центрируем текст */
+    }
+
+    .custom-image-content {
+        max-width: 60%; /* Уменьшаем ширину изображения */
+    }
+
+    .custom-form {
+        justify-content: center; /* Центрируем форму */
+    }
+
+    .custom-input-group {
+        flex: 1 1 100%; /* Делаем поля ввода на всю ширину */
+    }
+
+    .custom-download-btn {
+        max-width: 200px; /* Уменьшаем максимальную ширину кнопки */
+    }
+}
+
+/* Для устройств от 768px и меньше - Скрытие изображений */
+@media (max-width: 768px) {
+    .custom-image-content {
+        display: none; /* Скрываем изображения */
+    }
+
+    .custom-checklist-section {
+        padding: 30px 20px; /* Уменьшаем отступы */
+        margin-top: 50px; /* Уменьшаем отступ сверху */
+    }
+
+    .custom-title {
+        font-size: 36px; /* Уменьшаем размер заголовка */
+    }
+
+    .custom-description {
+        font-size: 14px; /* Уменьшаем размер шрифта */
+        margin-bottom: 20px;
+    }
+
+    .custom-text-content {
+        max-width: 100%; /* Растягиваем блок с текстом на всю ширину */
+        text-align: center; /* Центрируем текст */
+    }
+
+    .custom-form {
+        flex-direction: column; /* Меняем форму на колонку */
+        gap: 20px; /* Уменьшаем расстояние между полями */
+    }
+
+    .custom-input-group {
+        flex: 1 1 100%; /* Увеличиваем поля ввода */
+    }
+
+    .custom-download-btn {
+        max-width: 100%; /* Кнопка будет занимать всю ширину */
+    }
+}
+
+/* Для устройств до 400px */
+@media (max-width: 400px) {
+
+
+
+
+    .custom-content-wrapper {
+
+        margin-top: -350px;
+    }
+
+
+    .custom-title {
+        font-size: 28px; /* Уменьшаем размер заголовка */
+    }
+
+    .custom-description {
+        font-size: 12px; /* Уменьшаем шрифт описания */
+    }
+
+    .custom-input-group label {
+        font-size: 14px; /* Уменьшаем размер шрифта в лейблах */
+    }
+
+    .custom-input-group input {
+        padding: 12px 16px; /* Уменьшаем отступы в полях ввода */
+        font-size: 14px; /* Уменьшаем шрифт в полях ввода */
+    }
+
+    .custom-download-btn {
+        font-size: 16px; /* Уменьшаем размер текста в кнопке */
+        padding: 12px 20px; /* Уменьшаем отступы */
+    }
+
+    .custom-image-wrapper {
+        width: 160px; /* Уменьшаем изображения */
+        height: 210px;
+    }
+}
+
+.page3 {
+    padding-top: 250px;
+}
+
+.skills-section {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(90deg, #6A0DAD, #4E0DAD);
+    padding: 70px;
+    border-radius: 50px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: translateY(-10px);
+}
+
+.skill-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .skill-icon img {
+        width: 80%;
+    }
+
+    .skills-section {
+        padding: 40px;
+        border-radius: 10px;
+    }
+
+    .page3 {
+
+        margin-top: -150px ;
+    }
+}
+
+/* Всплывающее окно */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.popup-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: rgb(89, 0, 255);
+    color: white;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Анимация */
+.popup-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Общие стили */
+.page4 {
+    margin-top: 250px;
+}
+
+.projects-block {
+    display: flex; /* Используем flexbox для размещения текста и видео */
+    align-items: center; /* Выравниваем по верхнему краю */
+    margin: 20px; /* Общий отступ блока */
+}
+
+.text-container {
+    margin-left: 90px; /* Увеличенный отступ слева от текстового блока */
+    margin-right: 300px; /* Отступ справа от текстового блока */
+    position: relative; /* Для фона */
+}
+
+.projects-title {
+    font-size: 50px; /* Увеличенный размер шрифта заголовка */
+    position: relative;
+    display: inline-block;
+}
+
+.arrow {
+    color: #8A2BE2; /* Фиолетовый цвет стрелочки */
+    font-size: 36px; /* Увеличенный размер стрелочки */
+    margin-left: 10px; /* Отступ между текстом и стрелкой */
+    font-weight: bold; /* Жирный шрифт стрелки */
+}
+
+.title-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(138, 43, 226, 0.3); /* Фиолетовый блик */
+    filter: blur(30px); /* Размытие */
+    z-index: 1; /* За текстом */
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.projects-subtitle {
+    font-size: 30px; /* Увеличенный размер шрифта подзаголовка */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.video-container {
+    margin-top: 80px; /* Отступ между текстами и видео */
+    max-width: 900px; /* Максимальная ширина контейнера видео */
+    width: 100%; /* Ширина контейнера видео */
+    height: auto; /* Высота автоматически подстраивается */
+}
+
+.video-container iframe {
+    width: 100%; /* Ширина видео 100% от родительского контейнера */
+    height: 500px; /* Высота видео фиксирована */
+    border-radius: 15px; /* Закругленные края */
+    border: none; /* Убираем рамку */
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 480px) {
+
+    .page4 {
+        margin-top: -100px;
+    }
+
+    .projects-block {
+        flex-direction: column; /* Располагаем элементы вертикально */
+        align-items: center; /* Центрируем содержимое */
+        padding-top: 180px; /* Отступ сверху */
+        padding-bottom: 180px; /* Отступ снизу */
+    }
+
+    .text-container {
+        margin-left: 0; /* Убираем отступы */
+        margin-right: 0;
+        text-align: center; /* Центрируем текст */
+    }
+
+    .projects-title {
+        font-size: 2em;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .projects-subtitle {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .arrow {
+        display: none; /* Убираем стрелку */
+    }
+
+    .video-container {
+        margin-top: 20px; /* Уменьшаем отступ между текстом и видео */
+        max-width: 100%; /* Устанавливаем ширину 100% */
+    }
+
+    .video-container iframe {
+        height: 300px; /* Снижаем высоту видео для мобильных */
+    }
+}
+
+
+
+
+
+
+
+.page5 {
+    margin-top: 300px;
+}
+
+/* Растяжение секции на всю ширину */
+.custom-why-us-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px; /* Уменьшаем отступы */
+    width: 100%;
+    background: linear-gradient(90deg, #7527db, #5a25bd);
+    box-sizing: border-box; 
+    position: relative;
+}
+
+.custom-why-us-content {
+    max-width: 90%; /* Увеличиваем ширину для мобильных */
+    flex: 1;
+    margin: 100px; /* Уменьшаем отступы */
+}
+
+.custom-why-us-title {
+    font-size: 50px; /* Уменьшаем размер заголовка */
+    color: #ffffff;
+}
+
+.custom-why-us-description {
+    font-size: 24px; /* Уменьшаем размер описания */
+    margin: 20px 0;
+    color: #ffffff;
+}
+
+.custom-check-reviews-btn {
+    text-align: center;
+    background-color: white;
+    color: #5a2dff;
+    padding: 25px; /* Уменьшаем отступы */
+    border: none;
+    border-radius: 5px;
+    font-size: 20px; /* Уменьшаем размер текста */
+    font-weight: 800;
+    cursor: pointer;
+    margin: 10px 10px; /* Отступы между кнопками */
+    width: 100%; /* Кнопка занимает всю ширину */
+    max-width: 300px; /* Максимальная ширина кнопки */
+    box-sizing: border-box; /* Учитываем отступы в общей ширине */
+}
+
+/* Упорядочение карточек в линию */
+.custom-card-container, .custom-logo-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Элементы будут в линию и переходить на новую строку при необходимости */
+}
+
+.custom-card {
+    background-color: #ffffff;
+    color: #5a2dff;
+    border-radius: 10px;
+    padding: 20px; /* Уменьшаем отступы карточек */
+    text-align: center;
+    margin: 10px; /* Отступы между карточками */
+    flex: 1 1 150px; /* Адаптивный размер карточек */
+}
+
+.custom-card p {
+    font-weight: 800;
+}
+
+.custom-card-icon {
+    font-size: 40px; /* Уменьшаем размер иконки */
+    color: #5a2dff;
+    margin-right: 10px;
+}
+
+
+/* Логотипы */
+.custom-logo {
+    max-width: 80px; /* Уменьшаем ширину логотипов */
+    margin: 10px auto;
+    display: block;
+    border-radius: 50px;
+}
+
+.custom-logo-container .custom-card {
+    background: rgba(189, 47, 255, 0.2); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    color: #5a2dff;
+    border-radius: 10px;
+    padding: 20px; /* Уменьшаем отступы логотипов */
+    text-align: center;
+    margin: 10px; /* Отступы между логотипами */
+    flex: 1 1 80px; /* Адаптивный размер логотипов */
+}
+
+.custom-logo-container .custom-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.custom-why-us-image {
+    position: relative; /* Изменяем на относительное позиционирование */
+    max-width: 50%; /* Максимальная ширина изображения */
+    margin-top: 20px; 
+    right: -10px;
+}
+
+.custom-why-us-image img {
+    max-width: 100%; /* Изображение растягивается */
+    height: auto; /* Сохраняем пропорции */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* Добавляем плавность */
+}
+
+.custom-why-us-image img:hover {
+    transform: scale(1.1); /* Увеличиваем изображение при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+    opacity: 0.9; /* Немного уменьшаем непрозрачность */
+}
+
+.animated-balls-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .animated-ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(150, 85, 255, 0.3);
+    border-radius: 50%;
+    animation: floatBall 10s infinite ease-in-out;
+  }
+  
+  .ball1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+  }
+  
+  .ball2 {
+    top: 30%;
+    left: 60%;
+    animation-delay: 3s;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .ball3 {
+    top: 60%;
+    left: 45%;
+    animation-delay: 5s;
+    width: 40px;
+    height: 40px;
+  }
+  .ball4 {
+    top: 90%;
+    left: 4%;
+    animation-delay: 5s;
+    width: 40px;
+    height: 40px;
+  }
+  .ball5 {
+    top: 40%;
+    left: 30%;
+    animation-delay: 5s;
+    width: 20px;
+    height: 20px;
+  }
+
+  
+  @keyframes floatBall {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-20px) scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    .custom-why-us-image {
+        display: none; /* Скрываем изображение на экранах 1200px и меньше */
+    }
+
+    .custom-why-us-section {
+        flex-direction: column; /* Изменяем направление на колонку */
+        align-items: center; /* Центрируем содержимое */
+    }
+
+    .custom-why-us-content {
+        text-align: center; /* Центрируем текст */
+        margin: 20px 0; /* Добавляем отступ сверху и снизу */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .webcrafters-phone-image {
+        max-width: 30%; /* Увеличиваем максимальную ширину на мобильных устройствах */
+        top: 20%; /* Изменяем положение, если необходимо */
+    }
+
+    .custom-card, .custom-logo-container .custom-card {
+        width: 100%; /* Растягиваем карточки на всю ширину на маленьких экранах */
+    }
+
+    .custom-why-us-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .custom-why-us-image img {
+        max-width: 100%;
+    }
+
+    .page5 {
+
+        margin-top: -100px;
+    }
+}
+
+
+
+
+.page6 {
+
+    margin-top: 150px;
+}
+
+
+h2.separator{
+    padding: 0 80px;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+.sell-nft{
+    padding: 0 80px;
+    margin: 50px 0 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.sell-nft .item,
+.nft-shop .nft-list .item{
+    padding: 20px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sell-nft .item:hover,
+.nft-shop .nft-list .item:hover,
+.sellers .item:hover{
+    box-shadow: none;
+}
+
+.sell-nft .item .header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sell-nft .item .header i{
+    font-size: 40px;
+}
+
+.sell-nft .item .header h5{
+    font-size: 17px;
+}
+
+.sell-nft .item p{
+    margin-top: 10px;
+    padding: 0 4px;
+}
+
+.nft-shop{
+    padding: 0 80px;
+    margin-top: 30px;
+}
+
+
+
+.nft-shop .nft-list{
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.nft-shop .nft-list .item img{
+    width: 280px;
+    height: 280px;
+    border-radius: 18px;
+}
+
+.nft-shop .nft-list .item .info{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #edecec;
+}
+
+.nft-shop .nft-list .item .info h5{
+    font-size: 18px;
+}
+
+.nft-shop .nft-list .item .info .btc{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nft-shop .nft-list .item .btc i{
+    font-size: 22px;
+    color: #304ffe;
+}
+
+.nft-shop .nft-list .item .btc p{
+    font-size: 12px;
+    color: #304ffe;
+}
+
+.nft-shop .nft-list .item .info > p{
+    font-size: 12px;
+    color: #989898;
+}
+
+.nft-shop .nft-list .item .bid{
+    padding: 14px 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nft-shop .nft-list .item .bid p,
+.nft-shop .nft-list .item .bid a{
+    background-color: #edecec;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+.nft-shop .nft-list .item .bid a{
+    color: #304ffe;
+    background: transparent;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nft-shop .nft-list .item .bid a:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+.view-more{
+    margin: 10px 0 40px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.view-more button{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background: #dfdcdc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    
+}
+
+.view-more button a{
+
+    text-decoration: none;
+    color: #000;
+}
+
+.view-more button a:hover {
+
+    color: #fff;
+}
+
+
+.view-more button:hover{
+    color: #fff;
+    background: #0f2182;
+}
+
+.sellers{
+    padding: 0 80px;
+    margin: 40px 0 80px;
+    display: flex;
+    gap: 150px;
+    justify-content: center;
+}
+
+.sellers .item{
+    background: #fff;
+    display: flex;
+    align-items: center;
+    width: 25%;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sellers .item img{
+    width: 64px;
+}
+
+.sellers .item .info p{
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+
+@media screen and (max-width: 1400px) {
+    
+
+    h2.separator,
+    .sell-nft,
+    .nft-shop,
+    .sellers{
+        padding: 0 40px;
+    }
+
+
+    .nft-shop .nft-list .item img{
+        width: 220px;
+        height: 220px;
+    }
+
+
+}
+
+@media screen and (max-width: 1200px) {
+    
+
+    h2.separator{
+        font-size: 34px;
+    }
+
+    .sell-nft .item .header i{
+        font-size: 36px;
+    }
+
+    .sell-nft .item p{
+        font-size: 13px;
+    }
+
+    .nft-shop .nft-list{
+        flex-wrap: wrap;
+        row-gap: 30px;
+    }
+
+    .nft-shop .nft-list .item{
+        width: 48%;
+    }
+
+    .nft-shop .nft-list .item img{
+        width: 100%;
+        height: auto;
+    }
+
+    .sellers{
+        flex-wrap: wrap;
+    }
+
+    .sellers .item{
+        width: 48%;
+    }
+
+    
+
+}
+
+@media screen and (max-width: 992px) {
+    
+
+
+    .sell-nft{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .sell-nft .item{
+        width: 48%;
+    }
+
+    .sellers{
+        gap: 20px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+    
+  
+    h2.separator,
+    .sell-nft,
+    .nft-shop,
+    .sellers{
+        padding: 0 20px;
+    }
+
+
+    h2.separator{
+        font-size: 30px;
+    }
+
+ 
+}
+
+@media screen and (max-width: 576px) {
+    .sell-nft .item {
+        width: 100%;
+    }
+
+    .nft-shop .nft-list .item,
+    .sellers .item {
+        width: 47%; /* Ширина карточки */
+    }
+
+    .nft-shop .category a {
+        font-size: 13px;
+    }
+
+    /* Квадратные изображения */
+    .nft-shop .nft-list .item img {
+        aspect-ratio: 1 / 1; /* Квадратное изображение */
+        object-fit: cover; /* Обрезка изображения */
+        width: 100%; /* Ширина изображения равна ширине карточки */
+        height: auto; /* Автоматическая высота */
+    }
+
+    /* Ограничение ширины карточек */
+    .nft-shop .nft-list .item {
+        max-width: 100%; /* Карточки занимают всю ширину */
+    }
+}
+
+
+
+
+
+
+
+/* Footer Styling */
+.footer {
+    margin-top: 100px;
+    background: linear-gradient(to right, #ffffff, #f4f4f9);
+    color: #333;
+    padding: 50px 40px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-logo h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4B0082;
+}
+
+.footer-logo p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.footer-links h3,
+.footer-social h3,
+.footer-contact h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #4B0082;
+}
+
+.footer-links ul,
+.footer-contact p {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #4B0082;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #6f42c1;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-icons .social-link {
+    text-decoration: none;
+    color: #4B0082;
+    font-size: 1.7rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social .social-icons .social-link:hover {
+    transform: scale(1.2);
+    color: #6f42c1;
+}
+
+.footer-contact p {
+    color: #555;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Animations for footer */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for PC (Larger Screens) */
+/* Responsive Design for PC (Larger Screens) */ 
+@media screen and (min-width: 1024px) { 
+    .footer { 
+        padding: 60px 80px; 
+    } 
+ 
+    .footer-content { 
+        flex-wrap: nowrap; 
+        justify-content: space-between; 
+    } 
+ 
+    .footer-logo { 
+        flex: 1; 
+    } 
+ 
+    .footer-links, 
+    .footer-social, 
+    .footer-contact { 
+        flex: 1; 
+    } 
+ 
+    .footer-logo h2 { 
+        font-size: 2.5rem; 
+    } 
+ 
+    .footer-logo p { 
+        font-size: 1.2rem; 
+    } 
+ 
+    .footer-links h3, 
+    .footer-social h3, 
+    .footer-contact h3 { 
+        font-size: 1.5rem; 
+    } 
+ 
+    .footer-links ul li a { 
+        font-size: 1.1rem; 
+    } 
+ 
+    .footer-contact p { 
+        font-size: 1.1rem; 
+    } 
+} 
+ 
+/* Responsive Design for tablets and smaller devices */ 
+@media screen and (max-width: 1024px) { 
+    .footer-content { 
+        flex-direction: column; 
+        text-align: center; 
+    } 
+ 
+    .footer-logo, 
+    .footer-links, 
+    .footer-social, 
+    .footer-contact { 
+        margin-bottom: 20px; 
+    } 
+    
+
+    .social-icons {
+
+        justify-content: center;
+    }
+}
